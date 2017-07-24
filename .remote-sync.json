@@ -1,0 +1,12 @@
+{
+  "transport": "sftp",
+  "hostname": "45.33.64.204",
+  "port": 22,
+  "uploadOnSave": true,
+  "username": "root",
+  "password": "1uzRPgXqvD4a",
+  "target": "/_areason/areason",
+  "ignore": [
+    ".git/**"
+  ]
+}
