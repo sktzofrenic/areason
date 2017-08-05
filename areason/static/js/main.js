@@ -12,12 +12,12 @@
         var subpagesHeight = $('.pt-page-current').height();
         $(".subpages").height(subpagesHeight + 50);
     }
-    
+
     // Portfolio subpage filters
     function portfolio_init() {
         var portfolio_grid = $('#portfolio_grid'),
             portfolio_filter = $('#portfolio_filters');
-            
+
         if (portfolio_grid) {
 
             portfolio_grid.shuffle({
@@ -46,34 +46,34 @@
     // /Portfolio subpage filters
 
     // Contact form validator
-    $(function () {
-
-        $('#contact-form').validator();
-
-        $('#contact-form').on('submit', function (e) {
-            if (!e.isDefaultPrevented()) {
-                var url = "contact_form/contact_form.php";
-
-                $.ajax({
-                    type: "POST",
-                    url: url,
-                    data: $(this).serialize(),
-                    success: function (data)
-                    {
-                        var messageAlert = 'alert-' + data.type;
-                        var messageText = data.message;
-
-                        var alertBox = '<div class="alert ' + messageAlert + ' alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>' + messageText + '</div>';
-                        if (messageAlert && messageText) {
-                            $('#contact-form').find('.messages').html(alertBox);
-                            $('#contact-form')[0].reset();
-                        }
-                    }
-                });
-                return false;
-            }
-        });
-    });
+    // $(function () {
+    //
+    //     $('#contact-form').validator();
+    //
+    //     $('#contact-form').on('submit', function (e) {
+    //         if (!e.isDefaultPrevented()) {
+    //             var url = "contact_form/contact_form.php";
+    //
+    //             $.ajax({
+    //                 type: "POST",
+    //                 url: url,
+    //                 data: $(this).serialize(),
+    //                 success: function (data)
+    //                 {
+    //                     var messageAlert = 'alert-' + data.type;
+    //                     var messageText = data.message;
+    //
+    //                     var alertBox = '<div class="alert ' + messageAlert + ' alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>' + messageText + '</div>';
+    //                     if (messageAlert && messageText) {
+    //                         $('#contact-form').find('.messages').html(alertBox);
+    //                         $('#contact-form')[0].reset();
+    //                     }
+    //                 }
+    //             });
+    //             return false;
+    //         }
+    //     });
+    // });
     // /Contact form validator
 
     // Hide Mobile menu
@@ -92,12 +92,12 @@
             $(".preloader").fadeOut("slow");
 
             // initializing page transition.
-            var ptPage = $('.subpages');
-            if (ptPage[0]) {
-                PageTransitions.init({
-                    menu: 'ul.site-main-menu',
-                });
-            }
+            // var ptPage = $('.subpages');
+            // if (ptPage[0]) {
+            //     PageTransitions.init({
+            //         menu: 'ul.site-main-menu',
+            //     });
+            // }
         })
         .on('resize', function() { //Resize
              mobileMenuHide();
@@ -272,7 +272,7 @@
         //Google Maps
         $("#map").googleMap();
         $("#map").addMarker({
-            address: "15 avenue des champs Elysées 75008 Paris" // Your Address
+            address: "1850 Fairport Nine-Mile Pt. Rd, Penfield, NY" // Your Address
         });
     });
 

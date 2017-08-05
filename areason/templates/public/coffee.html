@@ -1,0 +1,77 @@
+ {% extends "index.html" %} {% block header %}
+<div class="page-header color-1">
+    <h2><img src="static/img/coffee-logo-small.png" alt=""><br>Coffee</h2>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<h1>Support our ministry and drink amazing coffee!</h1>
+<div class="row"  id="coffee-store">
+    <div class="col-sm-6 col-md-6 col-lg-6">
+        <div>
+            <ul class="coffee-list">
+                <li class="coffee-items" v-for="(item, index) in coffeeItems">
+                    <img src="static/img/coffee.png">
+                    <h4>[[item.item]] - $[[item.price]]</h4>
+                    <p>[[item.description]]</p>
+                    <div class="add-to-cart">
+                        <div class="options">
+                            <label for="">
+                                <input type="radio" :name="item.safeName" value="Whole Bean" v-model="item.option">Whole Bean
+                            </label>
+                            <label for="">
+                                <input type="radio" :name="item.safeName" value="Ground" v-model="item.option" checked>Ground
+                            </label>
+                        </div>
+                        <div class="quantity-left">
+                            <button class="btn" type="button" name="button" @click="decrement(item, index)">-</button>
+                            <input type="text" name="name" :value="item.quantity">
+                            <button class="btn" type="button" name="button" @click="increment(item, index)">+</button>
+                        </div>
+                        <button class="btn" @click="addToCart(item)">Add to Cart</button>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-6 col-lg-6">
+        <div class="shopping-cart">
+            <!-- Title -->
+            <div class="title">
+                Shopping Cart
+            </div>
+
+            <!-- Product #1 -->
+            <div class="item" v-for="(item, index) in cart">
+                <div class="image">
+                    <img src="static/img/coffee.png">
+                </div>
+
+                <div class="description">
+                    <span>[[ item.item ]]</span>
+                    <span>[[ item.option ]]</span>
+                    <span style="font-size:20px">Item Total: <strong>$[[ (item.unitPrice * item.quantity).toFixed(2) ]]</strong></span>
+                </div>
+
+                <div class="quantity">
+                    <button class="minus-btn" type="button" name="button" @click="decrement(item, index)">-</button>
+                    <input type="text" name="name" :value="item.quantity">
+                    <button class="plus-btn" type="button" name="button" @click="increment(item, index)">+</button>
+                </div>
+            </div>
+
+            <div class="title" v-if="cart.length > 0">
+                <p>Sub Total: $[[ shoppingTotal ]]</p>
+                <p>Tax: $[[ taxTotal ]]</p>
+                <p>Shipping: $[[ shippingTotal ]]</p>
+                <p style="font-size:20px"><strong>Total: $[[ total ]]</strong></p>
+                <span @click="checkout" class="btn checkout-btn">Checkout</span>
+            </div>
+            <div class="title" v-else>
+                <p>Nothing in your cart! Buy some coffee!</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

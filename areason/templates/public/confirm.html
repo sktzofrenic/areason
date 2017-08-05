@@ -1,0 +1,51 @@
+ {% extends "index.html" %} {% block header %}
+<div class="page-header color-1">
+    <h2>Coffee</h2>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<h1>Confirm order</h1>
+<div class="row" style="display:block !important">
+    <div class="col-sm-12 col-md-12 col-lg-12" style="display:block !important">
+        <div style="display:block !important">
+            <ul class="coffee-list">
+                <li class="coffee-items" v-for="(item, index) in coffeeItems">
+                    {% for item in session['purchase']['cart'] %}
+                    <span>
+                        <h4>{{item.item}} ({{ item.option }}) - ${{item.unitPrice * item.quantity}}</h4>
+                        <p>Quantity: {{item.quantity}}</p>
+                    </span>
+                    {% endfor %}
+                </li>
+
+                <li class="coffee-items">
+                    <p>Sub Total: ${{ session['purchase']['totals']['shoppingTotal']}}</p>
+                    <p>Tax: ${{ session['purchase']['totals']['taxTotal']}}</p>
+                    <p>Shipping: ${{ session['purchase']['totals']['shippingTotal']}}</p>
+                    <h3><strong>Total: ${{ session['purchase']['totals']['total']}}</strong></h3>
+                </li>
+                <li class="coffee-items">
+                    <form action="{{ url_for('public.pay')}}" method="POST">
+                        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+                        <script
+                            src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                            data-key="pk_test_34Ka1zIOUjzuFheP3mAQdGar"
+                            data-amount="{{ session['purchase']['totals']['stripeTotal']}}"
+                            data-name="A reasonforliving"
+                            data-description="Premium Roasted Coffee"
+                            data-shipping-address="true"
+                            data-billing-address="true"
+                            data-image="https://areasonforliving.com/static/img/coffee-logo-small.png"
+                            data-locale="auto">
+                        </script>
+                    </form>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

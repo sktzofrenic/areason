@@ -1,10 +1,16 @@
 # -*- coding: utf-8 -*-
 """Public forms."""
 from flask_wtf import Form
-from wtforms import PasswordField, StringField
+from wtforms import PasswordField, StringField, TextAreaField
 from wtforms.validators import DataRequired
 
 from areason.user.models import User
+
+
+class ContactForm(Form):
+    name = StringField('Full Name', validators=[DataRequired()])
+    email = StringField('Email Address', validators=[DataRequired()])
+    message = TextAreaField('Message', validators=[DataRequired()])
 
 
 class LoginForm(Form):

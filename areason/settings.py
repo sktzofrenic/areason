@@ -2,11 +2,17 @@
 """Application configuration."""
 import os
 
+MYSQL_USR = "myground"
+MYSQL_HOST = "localhost"
+MYSQL_PASS = "YpbcuGrta2"
+MYSQL_DB = "areason"
+MYSQL_PORT = 3306
+
 
 class Config(object):
     """Base configuration."""
 
-    SECRET_KEY = os.environ.get('AREASON_SECRET', 'secret-key')  # TODO: Change me
+    SECRET_KEY = os.environ.get('AREASON_SECRET', 'verysecretthingthatnoonewillguessexceptme')  # TODO: Change me
     APP_DIR = os.path.abspath(os.path.dirname(__file__))  # This directory
     PROJECT_ROOT = os.path.abspath(os.path.join(APP_DIR, os.pardir))
     BCRYPT_LOG_ROUNDS = 13
@@ -22,7 +28,7 @@ class ProdConfig(Config):
 
     ENV = 'prod'
     DEBUG = False
-    SQLALCHEMY_DATABASE_URI = 'postgresql://localhost/example'  # TODO: Change me
+    SQLALCHEMY_DATABASE_URI = 'mysql+mysqlconnector://{}:{}@{}:{}/{}' .format(MYSQL_USR, MYSQL_PASS, MYSQL_HOST, MYSQL_PORT, MYSQL_DB)
     DEBUG_TB_ENABLED = False  # Disable Debug toolbar
 
 
@@ -34,7 +40,7 @@ class DevConfig(Config):
     DB_NAME = 'dev.db'
     # Put the db file in project root
     DB_PATH = os.path.join(Config.PROJECT_ROOT, DB_NAME)
-    SQLALCHEMY_DATABASE_URI = 'sqlite:///{0}'.format(DB_PATH)
+    SQLALCHEMY_DATABASE_URI = 'mysql+mysqlconnector://{}:{}@{}:{}/{}' .format(MYSQL_USR, MYSQL_PASS, MYSQL_HOST, MYSQL_PORT, MYSQL_DB)
     DEBUG_TB_ENABLED = True
     CACHE_TYPE = 'simple'  # Can be "memcached", "redis", etc.
 

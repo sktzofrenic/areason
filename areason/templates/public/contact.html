@@ -1,0 +1,99 @@
+
+{% extends "index.html" %}
+
+{% block header %}
+<div class="page-header color-1">
+  <h2>About</h2>
+</div>
+{% endblock %}
+
+{% block content %}
+
+
+
+  <div class="row">
+    <div class="col-sm-6 col-md-6">
+      <div class="block-title">
+        <h3>Get in <span>Touch</span></h3>
+      </div>
+      <!-- Google Map -->
+      <div id="map" class="map"></div>
+      <!-- End of Google Map -->
+
+      <div class="contact-info-block">
+        <div class="ci-icon">
+          <i class="fa fa-map-marker"></i>
+        </div>
+        <div class="ci-text">
+          <h5>1850 Fairport Nine-Mile Pt Rd, Penfield, NY</h5>
+        </div>
+      </div>
+      <div class="contact-info-block">
+        <div class="ci-icon">
+          <i class="fa fa-envelope"></i>
+        </div>
+        <div class="ci-text">
+          <h5>aaron@<span style="display:none">asdfasdfasdfasdfasdfasdfasdf</span>areasonforliving.com</h5>
+        </div>
+      </div>
+      <div class="contact-info-block">
+        <div class="ci-icon">
+          <i class="fa fa-phone"></i>
+        </div>
+        <div class="ci-text">
+          <h5>+1 (765) 481-8464</h5>
+        </div>
+      </div>
+      <!-- <div class="contact-info-block">
+        <div class="ci-icon">
+          <i class="fa fa-check"></i>
+        </div>
+        <div class="ci-text">
+          <h5>Can't </h5>
+        </div>
+      </div> -->
+    </div>
+
+    <div class="col-sm-6 col-md-6">
+      <div class="block-title">
+        <h3>Contact <span>Form</span></h3>
+      </div>
+      <form id="contact-form" method="post" action="{{url_for('public.contact')}}">
+
+        <div class="messages"></div>
+        {{ form.hidden_tag() }}
+        <div class="controls">
+          <div class="form-group form-group-with-icon">
+            <i class="fa fa-user"></i>
+            {{ form.name.label }}
+            {{ form.name(id="form_name", type="text", class="form-control", placeholder="", required="required", **{'data-error':"Name is required."}) }}
+            <div class="form-control-border"></div>
+            <div class="help-block with-errors"></div>
+          </div>
+
+          <div class="form-group form-group-with-icon">
+            <i class="fa fa-envelope"></i>
+            {{ form.email.label }}
+            {{ form.email(id="form_email", type="email", class="form-control", placeholder="", required="required", **{'data-error':"Valid email is required."}) }}
+            <div class="form-control-border"></div>
+            <div class="help-block with-errors"></div>
+          </div>
+
+          <div class="form-group form-group-with-icon">
+            <i class="fa fa-comment"></i>
+            {{ form.message.label }}
+            {{ form.message(id="form_message", class="form-control",  rows="8", placeholder="", required="required", **{'data-error':"Please leave me a message"}) }}
+            <div class="form-control-border"></div>
+            <div class="help-block with-errors"></div>
+          </div>
+
+          <div class="g-recaptcha" data-sitekey="6LdqmCAUAAAAAMMNEZvn6g4W5e0or2sZmAVpxVqI"></div>
+
+          <button type="submit" class="button btn-send" value="Send message">Send Message</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+{% endblock %}
