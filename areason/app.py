@@ -3,7 +3,7 @@
 from flask import Flask, render_template
 
 from areason import commands, public, user
-from areason.extensions import bcrypt, cache, csrf_protect, db, debug_toolbar, login_manager, migrate, webpack
+from areason.extensions import bcrypt, cache, csrf_protect, db, debug_toolbar, login_manager, migrate
 from areason.settings import ProdConfig
 
 
@@ -31,7 +31,6 @@ def register_extensions(app):
     login_manager.init_app(app)
     debug_toolbar.init_app(app)
     migrate.init_app(app, db)
-    webpack.init_app(app)
     return None
 
 
