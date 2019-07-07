@@ -47,7 +47,7 @@
             <!-- Main menu -->
             <ul id="nav" class="site-main-menu">
 
-              <li>
+              <!-- <li>
                 <a class="pt-trigger" href="{{ url_for('public.about') }}" data-animation="62">About</a>
               </li>
               <li>
@@ -55,16 +55,16 @@
               </li>
               <li>
                 <a class="pt-trigger" href="{{ url_for('public.beliefs') }}" data-animation="62">Beliefs</a>
-              </li>
+              </li> -->
               <!-- <li>
                 <a class="pt-trigger" href="{{ url_for('public.coffee') }}" data-animation="62">Coffee</a>
               </li> -->
-              <li>
+              <!-- <li>
                 <a class="pt-trigger" href="{{ url_for('public.resources') }}" data-animation="62">Resources</a>
               </li>
               <li>
                 <a class="pt-trigger" href="{{ url_for('public.contact') }}" data-animation="62">Contact</a>
-              </li>
+              </li> -->
             </ul>
             <!-- /Main menu -->
           </div>
@@ -98,40 +98,66 @@
                   {% block header %}
                 <div class="page-header">
                   <div class="row">
-                    <div class="col-sm-4 col-md-4 col-lg-4">
+                    <div class="col-sm-6 col-md-6 col-lg-6">
                       <div class="photo">
-                        <img src="static/img/aaron.png" alt="">
+                        <img src="static/img/family_picture.jpg" alt="">
                       </div>
                     </div>
 
-                    <div class="col-sm-8 col-md-8 col-lg-8">
-                        <img class="center-image" src="static/img/logo-white.png" alt="">
+                    <div class="col-sm-6 col-md-6 col-lg-6">
+                        <img class="center-image" src="static/img/logo-color.png" alt="">
                     </div>
                   </div>
                 </div>
                 {% endblock %}
                 <div class="page-content">
                 {% block content %}
-                  <div class="row">
-                    <div class="col-sm-6 col-md-6 col-lg-6">
-                      <div class="about-me">
-                        <div class="block-title">
-                          <h3>About <span>Our Ministry</span></h3>
-                        </div>
-                        <p><strong>3,500 people leave the church every single day.</strong> We believe this is due to a lack of an authentic relationship with Jesus and an unpreparedness for spiritual battles.  </p><p> Our commitment is to help the Christian <span style="color:#F44336">develop a deeper connection with Jesus Christ </span>and equip them for service by discipling them in; evangelism, knowledge, character, and faith. </p>
-                      </div>
-                      <div class="download-resume">
-                        <a href="{{ url_for('public.about')}}" class="btn btn-secondary">Learn More</a>
-                      </div>
+                  <h1 style="text-align: center;">Reaching College Campuses For Christ</h1>
+                  <div class="row" style="margin-top: 80px">
+                    <div class="col-md-4 col-lg-4 col-sm-4">
+                      <a href="{{ url_for('public.what_we_do') }}">
+                        <img class="circle-image" src="static/img/what_we_do.jpg" alt="">
+                      </a>
+                      <h2>What We Do</h2>
+                      <a href="{{ url_for('public.what_we_do') }}" class="btn btn-primary">Find Out More</a>
                     </div>
-
-                    <div class="col-sm-6 col-md-6 col-lg-6">
-                        <div class="video-container">
-                            <iframe width="481" height="290" src="https://www.youtube.com/embed/BGNKBEUdFVA" frameborder="0" allowfullscreen>
-                            </iframe>
-                        </div>
+                    <div class="col-md-4 col-lg-4 col-sm-4">
+                      <a href="{{ url_for('public.where_weve_been') }}">
+                        <img class="circle-image photo" src="static/img/colleges_map.png" alt="">
+                      </a>
+                      <h2>Where We've Been</h2>
+                      <a href="{{ url_for('public.where_weve_been') }}" class="btn btn-primary">Find Out More</a>
                     </div>
-
+                    <div class="col-md-4 col-lg-4 col-sm-4">
+                      <a href="{{ url_for('public.beliefs') }}">
+                        <img class="circle-image" src="static/img/what_we_believe.png" alt="">
+                      </a>
+                      <h2>What We Believe</h2>
+                      <a href="{{ url_for('public.beliefs') }}" class="btn btn-primary">Find Out More</a>
+                    </div>
+                  </div>
+                  <div class="row" style="margin-top: 80px">
+                    <div class="col-md-4 col-lg-4 col-sm-4">
+                      <a href="{{ url_for('public.prayer_partner') }}">
+                        <img class="circle-image" src="static/img/prayer_partner.png" alt="">
+                      </a>
+                      <h2>Be A Prayer Partner</h2>
+                      <a href="{{ url_for('public.prayer_partner') }}" class="btn btn-primary">Find Out More</a>
+                    </div>
+                    <div class="col-md-4 col-lg-4 col-sm-4">
+                      <a href="{{ url_for('public.gimme5') }}">
+                        <img class="circle-image" src="static/img/gimme5.png" alt="">
+                      </a>
+                      <h2>Support</h2>
+                      <a href="{{ url_for('public.gimme5') }}" class="btn btn-primary">Find Out More</a>
+                    </div>
+                    <div class="col-md-4 col-lg-4 col-sm-4">
+                      <a href="{{ url_for('public.contact') }}">
+                        <img class="circle-image" src="static/img/contact_us.png" alt="">
+                      </a>
+                      <h2>Contact Us</h2>
+                      <a href="{{ url_for('public.contact') }}" class="btn btn-primary">Find Out More</a>
+                    </div>
                   </div>
                   {% endblock %}
                 </div>

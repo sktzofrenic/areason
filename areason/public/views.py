@@ -97,6 +97,26 @@ def pay():
     return render_template('public/finish.html', result=result)
 
 
+@blueprint.route('/support-the-hillyard-family')
+def gimme5():
+    """About page."""
+    return render_template('public/gimme5.html')
+
+@blueprint.route('/be-a-prayer-partner')
+def prayer_partner():
+    flash('Send me an email and ask to join our newsletter! We need your prayers!')
+    return redirect(url_for('public.contact'))
+
+@blueprint.route('/where-weve-been')
+def where_weve_been():
+    """About page."""
+    return render_template('public/where_weve_been.html')
+
+@blueprint.route('/what-we-do')
+def what_we_do():
+    """About page."""
+    return render_template('public/what_we_do.html')
+
 @blueprint.route('/about')
 def about():
     """About page."""

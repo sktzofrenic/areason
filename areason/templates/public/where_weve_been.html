@@ -1,0 +1,65 @@
+
+{% extends "index.html" %}
+
+{% block header %}
+<div class="page-header color-1">
+  <h2>Where We've Been</h2>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="row" style="text-align: left; font-size: 18px !important; line-height: 30px !important">
+  <div class="col-md-12">
+    <p style="font-size: 18px !important; line-height: 30px !important">We’ve had the privilege to travel to the following states and share the gospel of Jesus Christ on these campuses:
+      </p>
+      <img style="float: right;
+      margin: 10px;
+      border-radius: 10px;" src="https://via.placeholder.com/468x320?text=video+of+where+weve+been" alt="">
+    <p style="font-size: 18px !important; line-height: 30px !important">
+        <b><u>Connecticut</u></b> – UCONN, Yale University <br>
+        <b><u>Florida</u></b> – University of South Florida, University of Miami, University of Central Florida, Florida Atlantic University<br>
+        <b><u>Maine</u></b> – University of Maine at Augusta, Colby College<br>
+        <b><u>Massachusetts</u></b> – Harvard University<br>
+        <b><u>New Hampshire</u></b> – Southern New Hampshire University, Plymouth State College<br>
+        <b><u>New York</u></b> – SUNY Albany, Ithaca College, SUNY Cobleskill, Monroe Community College, University of Rochester, Rochester Institute of Technology<br>
+        <b><u>Ohio</u></b> – Mansfield University<br>
+        <b><u>Rhode Island</u></b> – Brown University<br>
+        <b><u>Vermont</u></b> – University of Vermont<br>
+        <b><u>Wisconsin</u></b> – University of Wisconsin at Madison<br>
+      </p>
+      <style>
+        .resp-container {
+          position: relative;
+          overflow: hidden;
+          padding-top: 56.25%;
+          margin-bottom: 25px;
+      }
+      .resp-iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+    }
+      </style>
+      <div class="resp-container">
+          <iframe class="resp-iframe" src="static/c1.pdf" gesture="media"  allow="encrypted-media" allowfullscreen></iframe>
+      </div>
+      <div class="resp-container">
+          <iframe class="resp-iframe" src="static/c2.pdf" gesture="media"  allow="encrypted-media" allowfullscreen></iframe>
+      </div>
+      <div class="resp-container">
+          <iframe class="resp-iframe" src="static/c3.pdf" gesture="media"  allow="encrypted-media" allowfullscreen></iframe>
+      </div>
+      <div class="resp-container">
+          <iframe class="resp-iframe" src="static/c4.pdf" gesture="media"  allow="encrypted-media" allowfullscreen></iframe>
+      </div>
+      <div class="resp-container">
+          <iframe class="resp-iframe" src="static/c5.pdf" gesture="media"  allow="encrypted-media" allowfullscreen></iframe>
+      </div>
+      
+  </div>
+</div>
+
+{% endblock %}
