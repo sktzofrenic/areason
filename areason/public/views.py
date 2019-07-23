@@ -122,6 +122,16 @@ def about():
     """About page."""
     return render_template('public/about.html')
 
+@blueprint.route('/success')
+def success():
+    """About page."""
+    return render_template('public/success.html')
+
+@blueprint.route('/canceled')
+def canceled():
+    """About page."""
+    return render_template('public/cancel.html')
+
 
 @blueprint.route('/evangelists')
 def evangelists():
