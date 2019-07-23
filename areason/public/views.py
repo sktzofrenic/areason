@@ -97,7 +97,7 @@ def pay():
     return render_template('public/finish.html', result=result)
 
 
-@blueprint.route('/support-the-hillyard-family')
+@blueprint.route('/support')
 def gimme5():
     """About page."""
     return render_template('public/gimme5.html')
