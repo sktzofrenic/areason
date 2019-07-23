@@ -5,6 +5,7 @@ from flask import Flask, render_template
 from areason import commands, public, user
 from areason.extensions import bcrypt, cache, db, login_manager, migrate
 from areason.settings import ProdConfig
+from flask_sslify import SSLify
 
 
 def create_app(config_object=ProdConfig):
@@ -29,6 +30,7 @@ def register_extensions(app):
     db.init_app(app)
     login_manager.init_app(app)
     migrate.init_app(app, db)
+    sslify = SSLify(app)
     return None
 
 
