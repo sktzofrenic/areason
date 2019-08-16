@@ -102,6 +102,11 @@ def gimme5():
     """About page."""
     return render_template('public/gimme5.html')
 
+@blueprint.route('/qr')
+def qr():
+    """About page."""
+    return redirect('https://www.youtube.com/watch?v=SctSa3SvIBE')
+
 @blueprint.route('/be-a-prayer-partner')
 def prayer_partner():
     flash('Send me an email and ask to join our newsletter! We need your prayers!')
