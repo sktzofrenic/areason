@@ -76,6 +76,24 @@
       $100 One time
     </button></p>
   </div>
+  <div class="col-md-6">
+      <p><button
+        style="background-color:#6772E5;color:#FFF;padding:8px 12px;border:0;border-radius:4px;font-size:1em"
+        id="checkout-button-sku_Fl0EZqPgkwbS5l"
+        role="link"
+      >
+        $200 One time
+      </button></p>
+    </div>
+    <div class="col-md-6">
+        <p><button
+          style="background-color:#6772E5;color:#FFF;padding:8px 12px;border:0;border-radius:4px;font-size:1em"
+          id="checkout-button-sku_Fl0GmakvdgxnMd"
+          role="link"
+        >
+        $500 One time
+        </button></p>
+      </div>
   </div>
 
 <!-- Load Stripe.js on your website. -->
@@ -261,5 +279,63 @@
     });
   });
 </script>
+
+<script>
+    var stripe = Stripe('pk_live_QenWBfbiiggT4aRM97lcONJa');
+  
+    var checkoutButton = document.getElementById('checkout-button-sku_Fl0GmakvdgxnMd');
+    checkoutButton.addEventListener('click', function () {
+      // When the customer clicks on the button, redirect
+      // them to Checkout.
+      stripe.redirectToCheckout({
+        items: [{sku: 'sku_Fl0GmakvdgxnMd', quantity: 1}],
+  
+        // Do not rely on the redirect to the successUrl for fulfilling
+        // purchases, customers may not always reach the success_url after
+        // a successful payment.
+        // Instead use one of the strategies described in
+        // https://stripe.com/docs/payments/checkout/fulfillment
+        successUrl: 'https://areasonforliving.com/success',
+        cancelUrl: 'https://areasonforliving.com/canceled',
+      })
+      .then(function (result) {
+        if (result.error) {
+          // If `redirectToCheckout` fails due to a browser or network
+          // error, display the localized error message to your customer.
+          var displayError = document.getElementById('error-message');
+          displayError.textContent = result.error.message;
+        }
+      });
+    });
+  </script>
+
+<script>
+    var stripe = Stripe('pk_live_QenWBfbiiggT4aRM97lcONJa');
+  
+    var checkoutButton = document.getElementById('checkout-button-sku_Fl0EZqPgkwbS5l');
+    checkoutButton.addEventListener('click', function () {
+      // When the customer clicks on the button, redirect
+      // them to Checkout.
+      stripe.redirectToCheckout({
+        items: [{sku: 'sku_Fl0EZqPgkwbS5l', quantity: 1}],
+  
+        // Do not rely on the redirect to the successUrl for fulfilling
+        // purchases, customers may not always reach the success_url after
+        // a successful payment.
+        // Instead use one of the strategies described in
+        // https://stripe.com/docs/payments/checkout/fulfillment
+        successUrl: 'https://areasonforliving.com/success',
+        cancelUrl: 'https://areasonforliving.com/canceled',
+      })
+      .then(function (result) {
+        if (result.error) {
+          // If `redirectToCheckout` fails due to a browser or network
+          // error, display the localized error message to your customer.
+          var displayError = document.getElementById('error-message');
+          displayError.textContent = result.error.message;
+        }
+      });
+    });
+  </script>
 
 {% endblock %}
