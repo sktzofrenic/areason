@@ -130,6 +130,12 @@ def about():
 @blueprint.route('/success')
 def success():
     """About page."""
+    html = """
+    <html>
+        <p>Someone paid you money via your donation page.</p>
+    </html>
+    """
+    send_html_email('{} <{}>'.format('Admin', 'admin@areasonforliving.com'), 'You got a payment', 'aaron@areasonforliving.com', 'dan@danwins.com', html)
     return render_template('public/success.html')
 
 @blueprint.route('/canceled')
