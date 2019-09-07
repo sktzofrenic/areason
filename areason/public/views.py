@@ -138,16 +138,17 @@ def success():
     # send_html_email('{} <{}>'.format('Admin', 'admin@areasonforliving.com'), 'You got a payment', 'aaron@areasonforliving.com', 'dan@danwins.com', html)
     return render_template('public/success.html')
 
-@blueprint.route('/checkout-succeeded')
+@blueprint.route('/checkout-succeeded', methods=['GET', 'POST'])
 def stripe_webhook():
     """About page."""
     print(request.data, request.form, request.args)
     html = """
     <html>
-        <p>{}</p>
+        <p>Data: {}</p>
+        <p>Form: {}</p>
         <p>Someone paid you money via your donation page.</p>
     </html>
-    """.format(request.data)
+    """.format(request.data, request.form)
     send_html_email('{} <{}>'.format('Admin', 'admin@areasonforliving.com'), 'You got a payment', 'aaron@areasonforliving.com', 'dan@danwins.com', html)
     return render_template('public/success.html')
 
