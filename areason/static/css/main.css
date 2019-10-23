@@ -189,8 +189,7 @@ Let’s add some basic style to  product name and description.
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 .quantity {
-  padding-top: 20px;
-  margin-right: 60px;
+    width: 100%;
 }
 .quantity input {
   -webkit-appearance: none;

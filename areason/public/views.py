@@ -91,7 +91,7 @@ def pay():
     }
 
     html = render_template('public/order_email.html', purchase=session.get('purchase', None))
-    send_html_email('A Reason for Living <admin@areasonforliving.com>', 'New Coffee Order', 'aaron@areasonforliving.com', 'dan@danwins.com', html)
+    send_html_email('A Reason for Living <admin@areasonforliving.com>', 'New Coffee Order', ['aaron@areasonforliving.com', 'sales@imprintcoffeeroasting.com'], 'dan@danwins.com', html)
 
     result = 'Successfully paid! We will ship your order soon.'
     return render_template('public/finish.html', result=result)

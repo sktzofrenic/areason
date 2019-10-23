@@ -28,7 +28,7 @@
                 </li>
                 <li class="coffee-items">
                     <form action="{{ url_for('public.pay')}}" method="POST">
-                        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+                        
                         <script
                             src="https://checkout.stripe.com/checkout.js" class="stripe-button"
                             data-key="pk_test_34Ka1zIOUjzuFheP3mAQdGar"

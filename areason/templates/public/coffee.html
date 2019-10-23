@@ -29,6 +29,7 @@
                             <input type="text" name="name" :value="item.quantity">
                             <button class="btn" type="button" name="button" @click="increment(item, index)">+</button>
                         </div>
+                        <br/>
                         <button class="btn" @click="addToCart(item)">Add to Cart</button>
                     </div>
                 </li>
@@ -53,7 +54,6 @@
                     <span>[[ item.option ]]</span>
                     <span style="font-size:20px">Item Total: <strong>$[[ (item.unitPrice * item.quantity).toFixed(2) ]]</strong></span>
                 </div>
-
                 <div class="quantity">
                     <button class="minus-btn" type="button" name="button" @click="decrement(item, index)">-</button>
                     <input type="text" name="name" :value="item.quantity">
