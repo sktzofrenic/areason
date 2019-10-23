@@ -49,7 +49,7 @@ def confirm(modify=None):
 
 @blueprint.route('/pay', methods=['GET', 'POST'])
 def pay():
-    amount = session.get('purchase', None).get('totals', None)['stripeTotal']
+    amount = int(session.get('purchase', None).get('totals', None)['stripeTotal'])
     print(amount)
     customer = stripe.Customer.create(
         email=request.form.get('stripeEmail', None),
