@@ -10,11 +10,11 @@ from areason.public.forms import ContactForm
 from areason.user.models import User
 from areason.utils import flash_errors, send_html_email
 from datetime import datetime
-
+import os
 import stripe
 
 stripe_keys = {
-    'secret_key': 'sk_live_SxZtgTHYXVc0rBHrC0qk32KL',
+    'secret_key': os.environ.get('STRIPE_SECRET_KEY', None),
     'publishable_key': 'pk_live_QenWBfbiiggT4aRM97lcONJa'
 }
 
