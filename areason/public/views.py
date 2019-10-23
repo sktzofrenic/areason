@@ -14,8 +14,8 @@ from datetime import datetime
 import stripe
 
 stripe_keys = {
-    'secret_key': 'sk_test_Xpu6wCBVWoj3Rrhg1tWvc9RV',
-    'publishable_key': 'sk_test_Xpu6wCBVWoj3Rrhg1tWvc9RV'
+    'secret_key': 'sk_live_SxZtgTHYXVc0rBHrC0qk32KL',
+    'publishable_key': 'pk_live_QenWBfbiiggT4aRM97lcONJa'
 }
 
 stripe.api_key = stripe_keys['secret_key']
