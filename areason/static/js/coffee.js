@@ -5,24 +5,24 @@ var app = new Vue({
         coffeeItems: [{
                 item: 'Guatemala',
                 safeName: 'rwandanLight',
-                description: 'A light body, single-origin Arabica bean with medium levels of acidity and chocolate tones.',
-                price: 11.99,
+                description: '',
+                price: 10.00,
                 quantity: 1,
                 option: 'Ground'
             },
             {
                 item: 'Peru',
                 safeName: 'brazilianDark',
-                description: 'A rare, single-origin Arabica bean with a high range of complexity & balance that yields a smooth body and clean finish.',
-                price: 11.99,
+                description: '',
+                price: 10.00,
                 quantity: 1,
                 option: 'Ground'
             },
             {
                 item: 'Colombia',
                 safeName: 'zambianMedium',
-                description: 'A full body, single-origin Arabica bean with an earthy aroma, low acidity and a light smokey finish.',
-                price: 11.99,
+                description: '',
+                price: 10.00,
                 quantity: 1,
                 option: 'Ground'
             }
