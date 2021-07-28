@@ -2,12 +2,10 @@
 <div class="page-header color-1">
     <h2><img src="static/img/coffee-logo-small.png" alt=""><br>Coffee</h2>
 </div>
-{% endblock %}
-
-{% block content %}
+{% endblock %} {% block content %}
 
 <h1>Support our ministry and drink amazing coffee!</h1>
-<div class="row"  id="coffee-store">
+<div class="row" id="coffee-store">
     <div class="col-sm-6 col-md-6 col-lg-6">
         <div>
             <ul class="coffee-list">
@@ -30,7 +28,7 @@
                             <button class="btn" type="button" name="button" @click="increment(item, index)">+</button>
                         </div>
                         <br/>
-                        <button class="btn" @click="addToCart(item)">Add to Cart</button>
+                        <button disabled class="btn disabled" @click="addToCart(item)">Add to Cart</button>
                     </div>
                 </li>
             </ul>
@@ -69,7 +67,8 @@
                 <span @click="checkout" class="btn checkout-btn">Checkout</span>
             </div>
             <div class="title" v-else>
-                <p>Nothing in your cart! Buy some coffee!</p>
+                <h2>Please contact us if you are interested in buying coffee.</h2>
+                <a href="https://areasonforliving.com/contact">Contact Us</a>
             </div>
         </div>
     </div>
